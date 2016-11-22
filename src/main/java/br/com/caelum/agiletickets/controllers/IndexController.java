@@ -9,13 +9,14 @@ import br.com.caelum.vraptor.Result;
 
 @Controller
 public class IndexController {
+	
+	@Deprecated
+	public IndexController() {
+		// TODO Auto-generated constructor stub
+	}
 
 	private Result result;
 	private Agenda agenda;
-	
-	/** @deprecated CDI eyes only*/
-	protected IndexController() {
-	}
 
 	@Inject
 	public IndexController(Result result, Agenda agenda) {

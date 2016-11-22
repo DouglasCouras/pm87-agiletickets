@@ -22,8 +22,9 @@ public class EstabelecimentosController {
 	private Validator validator;
 	private DiretorioDeEstabelecimentos diretorio;
 	
-	/** @deprecated CDI eyes only*/
-	protected EstabelecimentosController() {
+	@Deprecated
+	public EstabelecimentosController() {
+		// TODO Auto-generated constructor stub
 	}
 
 	@Inject
@@ -47,9 +48,5 @@ public class EstabelecimentosController {
 
 		diretorio.adiciona(estabelecimento);
 		result.redirectTo(this).lista();
-	}
-
-	private boolean ehbranco(String a) {
-		return Strings.isNullOrEmpty(a);
 	}
 }
