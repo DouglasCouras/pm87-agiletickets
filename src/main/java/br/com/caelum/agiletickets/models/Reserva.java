@@ -12,7 +12,7 @@ public class Reserva {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
+	
 	@ManyToOne
 	private Espetaculo espetaculo;
 }
