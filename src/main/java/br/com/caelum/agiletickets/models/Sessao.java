@@ -108,5 +108,12 @@ public class Sessao {
 	public BigDecimal getPreco() {
 		return preco;
 	}
+	public boolean isLimiteDisponivel(double fator) {
+		return ( getTotalIngressos() - getIngressosReservados()) / getTotalIngressos().doubleValue() <= fator; 
+	}
+
+	public static void main(String[] args) {
+		
+	}
 	
 }
