@@ -1,9 +1,16 @@
 package br.com.caelum.agiletickets.models;
 
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
 
 import org.junit.Test;
+
+import br.com.caelum.iogi.util.Assert;
+
+import org.joda.time.LocalDate;
+import org.joda.time.LocalTime;
 
 public class EspetaculoTest {
 
@@ -79,6 +86,22 @@ public class EspetaculoTest {
 		sessao.setIngressosReservados(quantidade);
 
 		return sessao;
+	}
+	
+	@Test
+	public void deveCriarCincoSessoesPorMes() {
+		//Initt
+		ArrayList<Sessao> lista = new ArrayList<Sessao>();
+		Espetaculo cirqueDuSoliel = new Espetaculo();
+		LocalDate inicio = new LocalDate(2016,12,01);
+		LocalDate fim = new LocalDate(2016,12,30);
+
+		
+		//Act
+		lista = (ArrayList<Sessao>) cirqueDuSoliel.criaSessoes(inicio, fim, new LocalTime(17,0), Periodicidade.SEMANAL);
+		
+		//Assert
+		assertEquals(5, lista.size());
 	}
 	
 }
